@@ -1,0 +1,49 @@
+<apex:page controller="Map1">
+ <apex:form >
+ <apex:pageblock title="input">
+ <apex:pageblocksection >
+ Name <apex:inputtext value="{!name}"/>
+ City <apex:inputtext value="{!city}"/>
+ <apex:commandButton Value="Create" action="{!create}"/>
+ </apex:pageblocksection>
+ </apex:pageblock>
+
+ <apex:pageblock title="Display">
+ <apex:pageblocktable title="Display" value="{!ravi}" var="a">
+ <apex:column value="{!a}"/>
+ <apex:column value="{!ravi[a]}"/>
+ </apex:pageblocktable>
+ </apex:pageblock>
+
+ <apex:pageblock title="search">
+ <apex:pageblocksection >
+ Search City by Name <apex:inputtext value="{!find}"/>
+ Searched City Name <apex:outputtext value="{!result}"/>
+ <apex:commandButton Value="Search" action="{!search}"/>
+ </apex:pageblocksection>
+ </apex:pageblock>
+
+ <apex:pageblock Title="Modify">
+ <apex:pageblocksection >
+ Enter the record name to be modified <apex:inputtext value="{!find}"/>
+
+ <apex:commandButton Value="Edit" action="{!Modify}"/>
+ <apex:commandButton Value="Save" action="{!save}"/>
+ <apex:commandButton Value="Savenew" action="{!savenew}"/>
+ </apex:pageblocksection>
+ </apex:pageblock>
+
+ <apex:pageblock Title="Delete">
+ <apex:pageblocksection >
+ Enter the record name to be deleted <apex:inputtext value="{!find}"/>
+ <apex:commandButton Value="Delete" action="{!del}"/>
+ <apex:commandButton Value="UnDelete" action="{!undel}"/>
+ </apex:pageblocksection>
+ <apex:pageblocktable title="Display" value="{!ravi1}" var="b">
+ <apex:column value="{!b}"/>
+ <apex:column value="{!ravi1[b]}"/>
+ </apex:pageblocktable>
+ </apex:pageblock>
+
+ </apex:form>
+</apex:page>

@@ -1,0 +1,30 @@
+<apex:page controller="CountryBasedCities" showHeader="false" >
+    <apex:form >
+        <apex:pageBlock >
+            
+            <apex:pageBlockTable value="{!countries}" var="item" >
+                
+                <apex:column rendered="{! item != null }" value="{!item}"/>
+                <apex:column >
+                 <apex:pageBlockTable value="{!mapOfMaps[item]}" var="itemc" >
+                     <apex:column rendered="{! itemc != null }" value="{!itemc}"/>
+                     <apex:column >
+                         <apex:pageBlockTable value="{!mapOfMaps[item][itemc]} " var="items">
+                             <apex:column value="{!items}" />
+                         </apex:pageBlockTable>
+                     </apex:column>
+                </apex:pageBlockTable>
+               </apex:column>
+           <!-- <apex:repeat value="{!mapOfMaps[item]}" var="updateRec" rendered="{! item != null }">
+                    <apex:column value="{!updateRec.Country}"/> 
+                </apex:repeat> --> 
+                
+                
+            </apex:pageBlockTable>
+            
+        </apex:pageBlock>   
+              
+        
+        
+    </apex:form>
+</apex:page>

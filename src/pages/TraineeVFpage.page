@@ -1,0 +1,12 @@
+<apex:page controller="TotalAmount" sidebar="false" showHeader="false" >
+ <apex:form >
+   <apex:pageBlock >
+     <apex:pageBlockTable value="{!wrapperList}" var="r">
+                        <apex:column headerValue="Job Name"       value="{!r.Name}"></apex:column>
+                        <apex:column headerValue="Payment Type"   value="{!r.Type}"></apex:column>
+                        <apex:column headerValue="noOfTrainees"   value="{!r.noOfTrainees}"></apex:column>
+                        <apex:column headerValue="Amount"         value="{!r.Amount}"></apex:column>
+                    </apex:pageBlockTable>
+   </apex:pageBlock>
+ </apex:form>
+</apex:page>

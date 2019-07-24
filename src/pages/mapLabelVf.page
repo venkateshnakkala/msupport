@@ -1,0 +1,10 @@
+<apex:page controller="mapLabel">
+ <apex:pageBlock >
+<apex:pageBlockSection columns="3" collapsible="false" >
+                
+            <apex:repeat value="{!MapFieldLabel}" var="item" >
+                   <apex:outputText value="{!MapFieldLabel[item]}" />
+            </apex:repeat>   
+  </apex:pageBlockSection>
+ </apex:pageBlock>  
+</apex:page>
